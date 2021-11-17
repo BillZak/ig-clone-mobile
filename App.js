@@ -29,51 +29,6 @@ const DATA = [
     title: "# Believe",
     amount: "45k posts",
   },
-  {
-    id: "bdacbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "# Health",
-    amount: "482k posts",
-  },
-  {
-    id: "3ac8afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "# Motivation",
-    amount: "567k posts",
-  },
-  {
-    id: "5864a0f-3da1-471f-bd96-145571e29d72",
-    title: "#heartbreak",
-    amount: "19k posts",
-  },
-  {
-    id: "bd7acbea-c1b1-46c2-ad5-3ad53abb28ba",
-    title: "# Life",
-    amount: "3.4m posts",
-  },
-  {
-    id: "3ac68afc-c605-48d3-a4f8-fbd91a97f63",
-    title: "# Health",
-    amount: "298k posts",
-  },
-  {
-    id: "58694a0f3da1-471f-bd96-145571e29d72",
-    title: "# Science",
-    amount: "938k posts",
-  },
-  {
-    id: "bdacbea-cb1-46c2-aed5-3ad53abb28ba",
-    title: "# Technology",
-    amount: "945k posts",
-  },
-  {
-    id: "3ac8afc-c605-4d3-a4f8-fbd91aa97f63",
-    title: "# Relationship",
-    amount: "7m posts",
-  },
-  {
-    id: "5864a0f-3da1-471f-d96-145571e29d72",
-    title: "# God",
-    amount: "32M posts",
-  },
 ];
 
 const Item = ({ item, onPress }) => (
@@ -119,7 +74,7 @@ const App = () => {
       </View>
 
       <View style={styles.face2}>
-        <View style={styles.activity}>
+        <View style={[styles.activity, styles.activeactivitytext]}>
           <TouchableOpacity>
             <Text style={styles.activitytext}>All Activity</Text>
           </TouchableOpacity>
@@ -142,12 +97,12 @@ const App = () => {
 
       <View style={styles.face4}>
         <IconAntDesign style={styles.bottomicons} name="home" />
+        <IconAntDesign style={styles.bottomicons} name="search1" />
+        <IconAntDesign style={styles.bottomicons} name="videocamera" />
         <IconAntDesign
           style={[styles.bottomicons, styles.activeicon]}
-          name="search1"
+          name="notification"
         />
-        <IconAntDesign style={styles.bottomicons} name="videocamera" />
-        <IconAntDesign style={styles.bottomicons} name="notification" />
         <IconFontAwesome style={styles.bottomicons} name="user-circle-o" />
       </View>
     </SafeAreaView>
@@ -163,7 +118,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     paddingHorizontal: 20,
-    backgroundColor: "yellow",
   },
   face2: {
     flex: 1,
@@ -210,6 +164,11 @@ const styles = StyleSheet.create({
   activitytext: {
     fontSize: 15,
     fontWeight: "bold",
+  },
+  activeactivitytext: {
+    borderBottomWidth: 4,
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
   },
   title: {
     fontSize: 20,
