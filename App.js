@@ -105,33 +105,30 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.face1}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            backgroundColor: "#F7F8F7",
-            borderRadius: 10,
-            marginHorizontal: 20,
-            marginVertical: 10,
-            paddingVertical: 5,
-            paddingLeft: 20,
-          }}
-        >
+        <View style={styles.navbar}>
+          <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+            Notifications
+          </Text>
+        </View>
+        <View style={styles.navbar}>
           <IconAntDesign
-            style={{ flex: 1, fontSize: 18, top: 5 }}
-            name="search1"
-          />
-          <TextInput
-            style={{ flex: 9, fontSize: 18 }}
-            placeholder="Search here"
+            style={{ fontSize: 25, textAlign: "right" }}
+            name="setting"
           />
         </View>
       </View>
 
       <View style={styles.face2}>
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-          Areas to relate to you
-        </Text>
+        <View style={styles.activity}>
+          <TouchableOpacity>
+            <Text style={styles.activitytext}>All Activity</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.activity}>
+          <TouchableOpacity>
+            <Text style={styles.activitytext}>Mentions</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <View style={styles.face3}>
@@ -160,14 +157,18 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 30,
   },
   face1: {
     flex: 1,
+    flexDirection: "row",
+    paddingHorizontal: 20,
+    backgroundColor: "yellow",
   },
   face2: {
     flex: 1,
-    justifyContent: "center",
-    paddingLeft: 20,
+    flexDirection: "row",
+    paddingHorizontal: 20,
   },
   face3: {
     flex: 10,
@@ -196,6 +197,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderTopWidth: 0.5,
     borderTopColor: "silver",
+  },
+  navbar: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  activity: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  activitytext: {
+    fontSize: 15,
+    fontWeight: "bold",
   },
   title: {
     fontSize: 20,
