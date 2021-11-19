@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   FlatList,
+  Image,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -16,37 +17,69 @@ import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "# Love",
-    amount: "132k posts",
+    title: "user_name",
+    message: "Liked your post",
+    img: require("./assets/n.png"),
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "# Work",
-    amount: "1.2m posts",
+    title: "user_name",
+    message: "Follows you now",
+    img: require("./assets/hj.jpeg"),
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "# Believe",
-    amount: "45k posts",
+    title: "user_name",
+    message: "Commented 'Thank You' on your post",
+    img: require("./assets/n.png"),
+  },
+  {
+    id: "bd7acbea-c1b1-462-aed5-3ad53abb28ba",
+    title: "user_name",
+    message: "Liked your post",
+    img: require("./assets/n.png"),
+  },
+  {
+    id: "3ac6afc-c605-48d3-a4f8-fbd91aa97f63",
+    title: "user_name",
+    message: "Follows you now",
+    img: require("./assets/hj.jpeg"),
+  },
+  {
+    id: "58694a0f-3da1-471-b96-145571e29d72",
+    title: "user_name",
+    message: "Commented 'Thank You' on your post",
+    img: require("./assets/n.png"),
+  },
+  {
+    id: "bd7acbea-c1b1-462-aed5-3d53abb28ba",
+    title: "user_name",
+    message: "Liked your post",
+    img: require("./assets/n.png"),
+  },
+  {
+    id: "3ac6afc-c605-48d3-a4f8-fbd91aa97f3",
+    title: "user_name",
+    message: "Follows you now",
+    img: require("./assets/hj.jpeg"),
+  },
+  {
+    id: "58694a0f-3da1-471-b96-14571e29d72",
+    title: "user_name",
+    message: "Commented 'Thank You' on your post",
+    img: require("./assets/n.png"),
   },
 ];
 
 const Item = ({ item, onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.item}>
-    <View style={{ flex: 4 }}>
-      <Text style={styles.title}>{item.title}</Text>
-      <Text style={{ color: "grey" }}>{item.amount}</Text>
+    <View style={{ flex: 2 }}>
+      <Image style={styles.profileimg} source={item.img} />
     </View>
-    <IconMaterialIcons
-      style={{
-        fontSize: 25,
-        textAlign: "right",
-        flex: 1,
-        alignSelf: "center",
-        color: "grey",
-      }}
-      name="more-vert"
-    />
+    <View style={{ flex: 6 }}>
+      <Text style={styles.title}>{item.title}</Text>
+      <Text>{item.message}</Text>
+    </View>
   </TouchableOpacity>
 );
 
@@ -170,8 +203,13 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 40,
     borderBottomLeftRadius: 40,
   },
+  profileimg: {
+    height: 60,
+    width: 60,
+    borderRadius: 50,
+  },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
   },
 });
