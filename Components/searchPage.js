@@ -16,37 +16,37 @@ import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "# Love",
+    title: "Love",
     amount: "132k posts",
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "# Work",
+    title: "Work",
     amount: "1.2m posts",
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "# Believe",
+    title: "Believe",
     amount: "45k posts",
   },
   {
     id: "bdacbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "# Health",
+    title: "Health",
     amount: "482k posts",
   },
   {
     id: "3ac8afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "# Motivation",
+    title: "Motivation",
     amount: "567k posts",
   },
   {
     id: "5864a0f-3da1-471f-bd96-145571e29d72",
-    title: "#heartbreak",
+    title: "heartbreak",
     amount: "19k posts",
   },
   {
     id: "bd7acbea-c1b1-46c2-ad5-3ad53abb28ba",
-    title: "# Life",
+    title: "Life",
     amount: "3.4m posts",
   },
   {
