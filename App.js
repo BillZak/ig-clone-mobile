@@ -17,70 +17,86 @@ import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "user_name",
-    message: "Liked your post",
+    title: "@user_name",
+    name: "Yourname",
+    message: "NB: Post must contain inspirational message and advice",
     img: require("./assets/n.png"),
+    time: "6m",
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "user_name",
-    message: "Follows you now",
+    title: "@user_name",
+    name: "Yourname",
+    message: "NB: Post must contain inspirational message and advice",
     img: require("./assets/hj.jpeg"),
+    time: "4h",
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "user_name",
-    message: "Commented 'Thank You' on your post",
+    title: "@user_name",
+    name: "Yourname",
+    message: "NB: Post must contain inspirational message and advice",
     img: require("./assets/n.png"),
+    time: "12m",
   },
   {
-    id: "bd7acbea-c1b1-462-aed5-3ad53abb28ba",
-    title: "user_name",
-    message: "Liked your post",
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53ab28ba",
+    title: "@user_name",
+    name: "Yourname",
+    message: "NB: Post must contain inspirational message and advice",
     img: require("./assets/n.png"),
+    time: "6h",
   },
   {
-    id: "3ac6afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "user_name",
-    message: "Follows you now",
+    id: "3ac68afc-c605-48d3-a4f-fbd91aa97f63",
+    title: "@user_name",
+    name: "Yourname",
+    message: "NB: Post must contain inspirational message and advice",
     img: require("./assets/hj.jpeg"),
+    time: "4s",
   },
   {
-    id: "58694a0f-3da1-471-b96-145571e29d72",
-    title: "user_name",
-    message: "Commented 'Thank You' on your post",
+    id: "58694af-3da1-471f-bd96-145571e29d72",
+    title: "@user_name",
+    name: "Yourname",
+    message: "NB: Post must contain inspirational message and advice",
     img: require("./assets/n.png"),
-  },
-  {
-    id: "bd7acbea-c1b1-462-aed5-3d53abb28ba",
-    title: "user_name",
-    message: "Liked your post",
-    img: require("./assets/n.png"),
-  },
-  {
-    id: "3ac6afc-c605-48d3-a4f8-fbd91aa97f3",
-    title: "user_name",
-    message: "Follows you now",
-    img: require("./assets/hj.jpeg"),
-  },
-  {
-    id: "58694a0f-3da1-471-b96-14571e29d72",
-    title: "user_name",
-    message: "Commented 'Thank You' on your post",
-    img: require("./assets/n.png"),
+    time: "12h",
   },
 ];
 
 const Item = ({ item, onPress }) => (
-  <TouchableOpacity onPress={onPress} style={styles.item}>
-    <View style={{ flex: 2 }}>
+  <View onPress={onPress} style={styles.item}>
+    <View style={styles.idview}>
       <Image style={styles.profileimg} source={item.img} />
+      <View style={styles.userid}>
+        <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+        <Text style={{ fontSize: 12, color: "grey" }}>
+          {item.title} . {item.time}
+        </Text>
+      </View>
+      <IconMaterialIcons
+        style={{
+          fontSize: 20,
+          alignSelf: "center",
+          position: "absolute",
+          right: 0,
+        }}
+        name="more-vert"
+      />
     </View>
-    <View style={{ flex: 6 }}>
-      <Text style={styles.title}>{item.title}</Text>
-      <Text>{item.message}</Text>
+
+    <View style={styles.postview}>
+      <Text style={{ fontSize: 15 }}>{item.message}</Text>
     </View>
-  </TouchableOpacity>
+
+    <View style={styles.interactview}>
+      <IconAntDesign style={styles.interacticons} name="hearto" />
+      <IconFontAwesome style={styles.interacticons} name="comment-o" />
+      <IconAntDesign style={styles.interacticons} name="retweet" />
+      <IconAntDesign style={styles.interacticons} name="sharealt" />
+    </View>
+  </View>
 );
 
 const App = () => {
@@ -94,32 +110,20 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.face1}>
         <View style={styles.navbar}>
-          <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-            Notifications
-          </Text>
+          <Text style={{ fontSize: 20, fontWeight: "bold" }}>Theragram</Text>
         </View>
         <View style={styles.navbar}>
-          <IconAntDesign
-            style={{ fontSize: 25, textAlign: "right" }}
-            name="setting"
+          <IconMaterialIcons
+            style={{
+              fontSize: 25,
+              textAlign: "right",
+            }}
+            name="add-box"
           />
         </View>
       </View>
 
       <View style={styles.face2}>
-        <View style={[styles.activity, styles.activeactivitytext]}>
-          <TouchableOpacity>
-            <Text style={styles.activitytext}>All Activity</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.activity}>
-          <TouchableOpacity>
-            <Text style={styles.activitytext}>Mentions</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <View style={styles.face3}>
         <FlatList
           data={DATA}
           renderItem={renderItem}
@@ -128,14 +132,14 @@ const App = () => {
         />
       </View>
 
-      <View style={styles.face4}>
-        <IconAntDesign style={styles.bottomicons} name="home" />
-        <IconAntDesign style={styles.bottomicons} name="search1" />
-        <IconAntDesign style={styles.bottomicons} name="videocamera" />
+      <View style={styles.face3}>
         <IconAntDesign
           style={[styles.bottomicons, styles.activeicon]}
-          name="notification"
+          name="home"
         />
+        <IconAntDesign style={styles.bottomicons} name="search1" />
+        <IconAntDesign style={styles.bottomicons} name="videocamera" />
+        <IconAntDesign style={styles.bottomicons} name="notification" />
         <IconFontAwesome style={styles.bottomicons} name="user-circle-o" />
       </View>
     </SafeAreaView>
@@ -153,15 +157,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   face2: {
-    flex: 1,
-    flexDirection: "row",
-    paddingHorizontal: 20,
+    flex: 11,
   },
   face3: {
-    flex: 10,
-    backgroundColor: "#F7F8F7",
-  },
-  face4: {
     flex: 1,
     flexDirection: "row",
     paddingHorizontal: 20,
@@ -179,34 +177,44 @@ const styles = StyleSheet.create({
   },
   item: {
     flex: 1,
-    flexDirection: "row",
-    paddingVertical: 15,
     paddingHorizontal: 20,
-    borderTopWidth: 0.5,
-    borderTopColor: "silver",
+    paddingVertical: 5,
+    borderBottomWidth: 0.5,
+    borderBottomColor: "silver",
+  },
+  idview: {
+    flex: 1,
+    flexDirection: "row",
+    position: "relative",
+    paddingVertical: 5,
+  },
+  postview: {
+    flex: 1,
+    paddingVertical: 5,
+  },
+  interactview: {
+    flex: 1,
+    flexDirection: "row",
+    paddingVertical: 5,
+  },
+  interacticons: {
+    flex: 1,
+    textAlign: "center",
+    margin: 5,
+    fontSize: 20,
   },
   navbar: {
     flex: 1,
     justifyContent: "center",
   },
-  activity: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  activitytext: {
-    fontSize: 15,
-    fontWeight: "bold",
-  },
-  activeactivitytext: {
-    borderBottomWidth: 4,
-    borderBottomRightRadius: 40,
-    borderBottomLeftRadius: 40,
-  },
   profileimg: {
-    height: 60,
-    width: 60,
+    height: 50,
+    width: 50,
     borderRadius: 50,
+  },
+  userid: {
+    marginLeft: 10,
+    justifyContent: "center",
   },
   title: {
     fontSize: 18,
