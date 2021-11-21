@@ -6,8 +6,6 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  TextInput,
-  TouchableOpacity,
   View,
 } from "react-native";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
