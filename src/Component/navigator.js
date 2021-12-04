@@ -10,7 +10,6 @@ import MyAccount from "../Pages/myAccountPage";
 //import vector icons
 import IconAntDesign from "react-native-vector-icons/AntDesign";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
-import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,6 +18,7 @@ function TabNavigator() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
+          contentStyle: { background: "white" },
           headerShown: false,
           tabBarActiveTintColor: "black",
           tabBarStyle: [
