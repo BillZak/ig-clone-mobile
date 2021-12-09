@@ -8,7 +8,9 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  KeyboardAvoidingView,
 } from "react-native";
+import { KeyboardAvoidingViewComponent } from "react-native";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -103,46 +105,48 @@ const SearchPage = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.face1}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            backgroundColor: "#F7F8F7",
-            borderRadius: 10,
-            marginHorizontal: 20,
-            marginVertical: 10,
-            paddingVertical: 5,
-            paddingLeft: 20,
-          }}
-        >
-          <IconAntDesign
-            style={{ flex: 1, fontSize: 18, top: 5 }}
-            name="search1"
-          />
-          <TextInput
-            style={{ flex: 9, fontSize: 18 }}
-            placeholder="Search here"
+    <KeyboardAvoidingView>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.face1}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              backgroundColor: "#F7F8F7",
+              borderRadius: 10,
+              marginHorizontal: 20,
+              marginVertical: 10,
+              paddingVertical: 5,
+              paddingLeft: 20,
+            }}
+          >
+            <IconAntDesign
+              style={{ flex: 1, fontSize: 18, top: 5 }}
+              name="search1"
+            />
+            <TextInput
+              style={{ flex: 9, fontSize: 18 }}
+              placeholder="Search here"
+            />
+          </View>
+        </View>
+
+        <View style={styles.face2}>
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+            Areas to relate to you
+          </Text>
+        </View>
+
+        <View style={styles.face3}>
+          <FlatList
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+            extraData={selectedId}
           />
         </View>
-      </View>
-
-      <View style={styles.face2}>
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-          Areas to relate to you
-        </Text>
-      </View>
-
-      <View style={styles.face3}>
-        <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          extraData={selectedId}
-        />
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 
