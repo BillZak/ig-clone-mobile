@@ -18,6 +18,7 @@ function TabNavigator() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
+          tabBarHideOnKeyboard: true,
           contentStyle: { background: "white" },
           headerShown: false,
           tabBarActiveTintColor: "black",
