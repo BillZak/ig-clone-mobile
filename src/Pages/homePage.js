@@ -3,11 +3,8 @@ import {
   FlatList,
   Image,
   SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
-  TextInput,
-  TouchableOpacity,
   View,
 } from "react-native";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
@@ -22,6 +19,7 @@ const DATA = [
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../assets/n.png"),
     time: "6m",
+    date: "10:20 AM, 10 DEC 21",
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
@@ -30,6 +28,7 @@ const DATA = [
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../assets/hj.jpeg"),
     time: "4h",
+    date: "11:40 AM, 14 JAN 21",
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
@@ -38,6 +37,7 @@ const DATA = [
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../assets/n.png"),
     time: "12m",
+    date: "07:30 AM, 09 SEPT 21",
   },
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53ab28ba",
@@ -46,6 +46,7 @@ const DATA = [
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../assets/n.png"),
     time: "6h",
+    date: "12:00 PM, 12 MAR 21",
   },
   {
     id: "3ac68afc-c605-48d3-a4f-fbd91aa97f63",
@@ -54,6 +55,7 @@ const DATA = [
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../assets/hj.jpeg"),
     time: "4s",
+    date: "09:50 PM, 30 AUG 21",
   },
   {
     id: "58694af-3da1-471f-bd96-145571e29d72",
@@ -62,11 +64,12 @@ const DATA = [
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../assets/n.png"),
     time: "12h",
+    date: "03:29 AM, 24 FEB 21",
   },
 ];
 
 const Item = ({ item, onPress }) => (
-  <View onPress={onPress} style={styles.item}>
+  <View style={styles.item}>
     <View style={styles.idview}>
       <Image style={styles.profileimg} source={item.img} />
       <View style={styles.userid}>
@@ -87,7 +90,9 @@ const Item = ({ item, onPress }) => (
     </View>
 
     <View style={styles.postview}>
-      <Text style={{ fontSize: 15 }}>{item.message}</Text>
+      <Text onPress={onPress} style={{ fontSize: 15 }}>
+        {item.message}
+      </Text>
     </View>
 
     <View style={styles.interactview}>
@@ -99,11 +104,16 @@ const Item = ({ item, onPress }) => (
   </View>
 );
 
-const HomePage = () => {
+const HomePage = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
-    return <Item item={item} onPress={() => setSelectedId(item.id)} />;
+    return (
+      <Item
+        item={item}
+        onPress={() => navigation.navigate("ReviewHome", { item: item })}
+      />
+    );
   };
 
   return (
