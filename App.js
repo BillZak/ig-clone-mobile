@@ -1,8 +1,8 @@
 import React from "react";
-import TabNavigator from "./src/Component/navigator";
+import MyStack from "./src/Component/StackNavigator";
 
 const App = () => {
-  return <TabNavigator />;
+  return <MyStack />;
 };
 
 export default App;
