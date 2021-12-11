@@ -34,11 +34,3 @@ function TopTabNavigator() {
 }
 
 export default TopTabNavigator;
-
-export function AccountTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="" component="" />
-    </Tab.Navigator>
-  );
-}
