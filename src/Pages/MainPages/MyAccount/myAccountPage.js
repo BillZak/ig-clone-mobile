@@ -1,9 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, SafeAreaView, View, Image } from "react-native";
+import AccountTabs from "../../../Component/Navigators/HomePageTabs";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
-import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
-import IconAntDesign from "react-native-vector-icons/AntDesign";
 
 export default function MyAccount() {
   return (
@@ -40,7 +39,7 @@ export default function MyAccount() {
               marginTop: 6,
               borderRadius: 100,
             }}
-            source={require("../../assets/p.png")}
+            source={require("../../../../assets/p.png")}
           />
         </View>
         <View style={{ flex: 3, paddingLeft: 20, paddingTop: 10 }}>
@@ -64,27 +63,7 @@ export default function MyAccount() {
           <Text>Advicers</Text>
         </View>
       </View>
-
-      <View style={styles.face4}>
-        <View style={[styles.posts, styles.activepost]}>
-          <Text style={styles.posttexts}>Posts</Text>
-        </View>
-        <View style={styles.posts}>
-          <Text style={styles.posttexts}>Media</Text>
-        </View>
-        <View style={styles.posts}>
-          <Text style={styles.posttexts}>Likes</Text>
-        </View>
-        <View style={styles.posts}>
-          <Text style={styles.posttexts}>Tagged</Text>
-        </View>
-      </View>
-
-      <View style={styles.face5}>
-        <IconMaterialIcons style={{ fontSize: 30 }} name="add" />
-        <Text>Upload something for the first time</Text>
-      </View>
-
+      <AccountTabs />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -95,11 +74,11 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 30,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
   face1: {
-    flex: 1,
+    flex: 0.13,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -108,31 +87,34 @@ const styles = StyleSheet.create({
     borderBottomColor: "silver",
   },
   face2: {
-    flex: 2,
+    flex: 0.23,
     flexDirection: "row",
     width: "100%",
   },
   face3: {
-    flex: 1,
+    flex: 0.18,
     flexDirection: "row",
     paddingHorizontal: 20,
     width: "100%",
   },
-  face4: {
-    flex: 1,
-    flexDirection: "row",
-    paddingHorizontal: 20,
-    width: "100%",
-    borderBottomWidth: 0.3,
-    borderBottomColor: "grey",
+  tabs: {
+    flex: 6,
   },
-  face5: {
-    flex: 7,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#F7F8F7",
-    width: "100%",
-  },
+  // face4: {
+  //   flex: 1,
+  //   flexDirection: "row",
+  //   paddingHorizontal: 20,
+  //   width: "100%",
+  //   borderBottomWidth: 0.3,
+  //   borderBottomColor: "grey",
+  // },
+  // face5: {
+  //   flex: 7,
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  //   backgroundColor: "#F7F8F7",
+  //   width: "100%",
+  // },
   follows: {
     flex: 1,
     alignItems: "center",
@@ -142,16 +124,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  posts: {
-    flex: 1,
-    justifyContent: "center",
-  },
-  activepost: {
-    borderBottomWidth: 4,
-    borderBottomRightRadius: 40,
-  },
-  posttexts: {
-    fontSize: 15,
-    fontWeight: "bold",
-  },
+  // posts: {
+  //   flex: 1,
+  //   justifyContent: "center",
+  // },
+  // activepost: {
+  //   borderBottomWidth: 4,
+  //   borderBottomRightRadius: 40,
+  // },
+  // posttexts: {
+  //   fontSize: 15,
+  //   fontWeight: "bold",
+  // },
 });
