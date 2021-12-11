@@ -9,63 +9,60 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-import IconAntDesign from "react-native-vector-icons/AntDesign";
-import TopTabNavigator from "../Component/TopTabNavigator";
-
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
     title: "user_name",
     message: "Liked your post",
-    img: require("../../assets/n.png"),
+    img: require("../../../../../assets/n.png"),
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
     title: "user_name",
     message: "Follows you now",
-    img: require("../../assets/hj.jpeg"),
+    img: require("../../../../../assets/hj.jpeg"),
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
     title: "user_name",
     message: "Commented 'Thank You' on your post",
-    img: require("../../assets/n.png"),
+    img: require("../../../../../assets/n.png"),
   },
   {
     id: "bd7acbea-c1b1-462-aed5-3ad53abb28ba",
     title: "user_name",
     message: "Liked your post",
-    img: require("../../assets/n.png"),
+    img: require("../../../../../assets/n.png"),
   },
   {
     id: "3ac6afc-c605-48d3-a4f8-fbd91aa97f63",
     title: "user_name",
     message: "Follows you now",
-    img: require("../../assets/hj.jpeg"),
+    img: require("../../../../../assets/hj.jpeg"),
   },
   {
     id: "58694a0f-3da1-471-b96-145571e29d72",
     title: "user_name",
     message: "Commented 'Thank You' on your post",
-    img: require("../../assets/n.png"),
+    img: require("../../../../../assets/n.png"),
   },
   {
     id: "bd7acbea-c1b1-462-aed5-3d53abb28ba",
     title: "user_name",
     message: "Liked your post",
-    img: require("../../assets/n.png"),
+    img: require("../../../../../assets/n.png"),
   },
   {
     id: "3ac6afc-c605-48d3-a4f8-fbd91aa97f3",
     title: "user_name",
     message: "Follows you now",
-    img: require("../../assets/hj.jpeg"),
+    img: require("../../../../../assets/hj.jpeg"),
   },
   {
     id: "58694a0f-3da1-471-b96-14571e29d72",
     title: "user_name",
     message: "Commented 'Thank You' on your post",
-    img: require("../../assets/n.png"),
+    img: require("../../../../../assets/n.png"),
   },
 ];
 
