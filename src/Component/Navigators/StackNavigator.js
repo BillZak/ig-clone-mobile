@@ -1,8 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import ReviewHomePost from "../Pages/ReviewHomePost";
-import Main from "../Pages/Main";
+import ReviewHomePost from "../../Pages/MainPages/Home/ReviewHomePost";
+import Main from "../../Pages/MainPages/Main";
 
 const Stack = createStackNavigator();
 
