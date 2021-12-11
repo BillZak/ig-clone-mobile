@@ -1,5 +1,5 @@
 import React from "react";
-import MyStack from "./src/Component/StackNavigator";
+import MyStack from "./src/Component/Navigators/StackNavigator";
 
 const App = () => {
   return <MyStack />;
