@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
-import TopTabNavigator from "../Component/TopTabNavigator";
+import TopTabNavigator from "../../../Component/Navigators/TopTabNavigator";
 
 const Notification = () => {
   return (
