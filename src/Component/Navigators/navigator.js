@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 //import pages
-import HomePage from "../Pages/homePage";
-import SearchPage from "../Pages/searchPage";
-import Notification from "../Pages/notificationPage";
-import MyAccount from "../Pages/myAccountPage";
+import HomePage from "../../Pages/MainPages/Home/homePage";
+import SearchPage from "../../Pages/MainPages/SearchPage/searchPage";
+import Notification from "../../Pages/MainPages/Notifications/notificationPage";
+import MyAccount from "../../Pages/MainPages/MyAccount/myAccountPage";
 import TopTabNavigator from "./TopTabNavigator";
 //import vector icons
 import IconAntDesign from "react-native-vector-icons/AntDesign";
