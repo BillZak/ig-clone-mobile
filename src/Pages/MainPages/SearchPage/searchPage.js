@@ -97,11 +97,11 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
-const SearchPage = () => {
+const SearchPage = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
-    return <Item item={item} onPress={() => setSelectedId(item.id)} />;
+    return <Item item={item} onPress={() => navigation.navigate("Love")} />;
   };
 
   return (
