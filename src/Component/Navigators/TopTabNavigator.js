@@ -2,8 +2,39 @@ import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import Activity from "../../Pages/MainPages/Notifications/Notif.Tabs/ActivityTab";
 import MentionsTab from "../../Pages/MainPages/Notifications/Notif.Tabs/MentionsTab";
+import Top from "../../Pages/MainPages/SearchPage/Tabs/Top";
+import People from "../../Pages/MainPages/SearchPage/Tabs/People";
+import Recent from "../../Pages/MainPages/SearchPage/Tabs/Recent";
 
 const Tab = createMaterialTopTabNavigator();
+
+export function SearchPageTabs() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarLabelStyle: {
+          fontSize: 18,
+          color: "black",
+          textTransform: "none",
+        },
+        tabBarIndicatorStyle: {
+          backgroundColor: "black",
+          borderBottomWidth: 4,
+          width: 80,
+          marginHorizontal: 20,
+        },
+        tabBarStyle: {
+          height: 50,
+          elevation: 0,
+        },
+      }}
+    >
+      <Tab.Screen name="Top" component={Top} />
+      <Tab.Screen name="Recent" component={Recent} />
+      <Tab.Screen name="People" component={People} />
+    </Tab.Navigator>
+  );
+}
 
 function TopTabNavigator() {
   return (
