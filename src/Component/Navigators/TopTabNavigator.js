@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import Activity from "../../Pages/MainPages/Notifications/Notif.Tabs/ActivityTab";
 import MentionsTab from "../../Pages/MainPages/Notifications/Notif.Tabs/MentionsTab";
@@ -29,7 +29,7 @@ export function SearchPageTabs({ title }) {
         },
       }}
     >
-      <Tab.Screen name="Top" title={title} component={Top} />
+      <Tab.Screen name="Tab" component={Tab} initialParams={{ title: title }} />
 
       <Tab.Screen name="Recent" component={Recent} />
       <Tab.Screen name="People" component={People} />
