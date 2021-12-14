@@ -8,7 +8,7 @@ import Recent from "../../Pages/MainPages/SearchPage/Tabs/Recent";
 
 const Tab = createMaterialTopTabNavigator();
 
-export function SearchPageTabs() {
+export function SearchPageTabs({ title }) {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -29,7 +29,8 @@ export function SearchPageTabs() {
         },
       }}
     >
-      <Tab.Screen name="Top" component={Top} />
+      <Tab.Screen name="Top" title={title} component={Top} />
+
       <Tab.Screen name="Recent" component={Recent} />
       <Tab.Screen name="People" component={People} />
     </Tab.Navigator>
