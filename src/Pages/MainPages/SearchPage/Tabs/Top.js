@@ -5,133 +5,75 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-const DATA = [
-  {
-    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "@user_name",
-    name: "Yourname",
-    message:
-      "NB: Post must contain inspirational message and advice about Love",
-    img: require("../../../../../assets/n.png"),
-    time: "6m",
-    date: "10:20 AM, 10 DEC 21",
-  },
-  {
-    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "@user_name",
-    name: "Yourname",
-    message:
-      "NB: Post must contain inspirational message and advice about Love",
-    img: require("../../../../../assets/hj.jpeg"),
-    time: "4h",
-    date: "11:40 AM, 14 JAN 21",
-  },
-  {
-    id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "@user_name",
-    name: "Yourname",
-    message:
-      "NB: Post must contain inspirational message and advice about Love",
-    img: require("../../../../../assets/n.png"),
-    time: "12m",
-    date: "07:30 AM, 09 SEPT 21",
-  },
-  {
-    id: "bd7acbea-c1b1-46c2-aed5-3ad53ab28ba",
-    title: "@user_name",
-    name: "Yourname",
-    message:
-      "NB: Post must contain inspirational message and advice about Love",
-    img: require("../../../../../assets/n.png"),
-    time: "6h",
-    date: "12:00 PM, 12 MAR 21",
-  },
-  {
-    id: "3ac68afc-c605-48d3-a4f-fbd91aa97f63",
-    title: "@user_name",
-    name: "Yourname",
-    message:
-      "NB: Post must contain inspirational message and advice about Love",
-    img: require("../../../../../assets/hj.jpeg"),
-    time: "4s",
-    date: "09:50 PM, 30 AUG 21",
-  },
-  {
-    id: "58694af-3da1-471f-bd96-145571e29d72",
-    title: "@user_name",
-    name: "Yourname",
-    message:
-      "NB: Post must contain inspirational message and advice about Love",
-    img: require("../../../../../assets/n.png"),
-    time: "12h",
-    date: "03:29 AM, 24 FEB 21",
-  },
-];
-
-const Item = ({ item, onPress }) => (
-  <View style={styles.item}>
-    <View style={styles.idview}>
-      <Image style={styles.profileimg} source={item.img} />
-      <View style={styles.userid}>
-        <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-        <Text style={{ fontSize: 12, color: "grey" }}>
-          {item.title} . {item.time}
-        </Text>
-      </View>
-      <IconMaterialIcons
-        style={{
-          fontSize: 20,
-          alignSelf: "center",
-          position: "absolute",
-          right: 0,
-        }}
-        name="more-vert"
-      />
-    </View>
-
-    <View style={styles.postview}>
-      <Text onPress={onPress} style={{ fontSize: 15 }}>
-        {item.message}
-      </Text>
-    </View>
-
-    <View style={styles.interactview}>
-      <IconAntDesign style={styles.interacticons} name="hearto" />
-      <IconFontAwesome style={styles.interacticons} name="comment-o" />
-      <IconAntDesign style={styles.interacticons} name="retweet" />
-      <IconAntDesign style={styles.interacticons} name="sharealt" />
-    </View>
-  </View>
-);
-
-const Top = ({ navigation }) => {
-  const [selectedId, setSelectedId] = useState(null);
-
-  const renderItem = ({ item }) => {
-    return (
-      <Item
-        item={item}
-        onPress={() => navigation.navigate("ReviewHome", { item: item })}
-      />
-    );
-  };
-
+const Top = ({ title }) => {
+  console.log(title);
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.face2}>
+      <TouchableOpacity onPress={() => console.warn(title)}>
+        <Text style={{ fontSize: 30 }}>tap</Text>
+      </TouchableOpacity>
+      {/* <View>
         <FlatList
-          data={DATA}
-          renderItem={renderItem}
+          data={item}
           keyExtractor={(item) => item.id}
-          extraData={selectedId}
+          renderItem={({ item }) => {
+            return (
+              <View style={styles.item}>
+                <View style={styles.idview}>
+                  <Image style={styles.profileimg} source={item.img} />
+                  <View style={styles.userid}>
+                    <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+                    <Text style={{ fontSize: 12, color: "grey" }}>
+                      {item.username} . {item.time}
+                    </Text>
+                  </View>
+                  <IconMaterialIcons
+                    style={{
+                      fontSize: 20,
+                      alignSelf: "center",
+                      position: "absolute",
+                      right: 0,
+                    }}
+                    name="more-vert"
+                  />
+                </View>
+
+                <View style={styles.postview}>
+                  <Text
+                    onPress={() =>
+                      navigation.navigate("ReviewHome", { item: item })
+                    }
+                    style={{ fontSize: 15 }}
+                  >
+                    {item.message}
+                  </Text>
+                </View>
+
+                <View style={styles.interactview}>
+                  <IconAntDesign style={styles.interacticons} name="hearto" />
+                  <IconFontAwesome
+                    style={styles.interacticons}
+                    name="comment-o"
+                  />
+                  <IconAntDesign style={styles.interacticons} name="retweet" />
+                  <IconAntDesign style={styles.interacticons} name="sharealt" />
+                </View>
+              </View>
+            );
+          }}
         />
-      </View>
+      </View> */}
+      {/* <View>{item.item.title}</View>
+      <View>{item.item.id}</View>
+      <View>{item.item.amount}</View>
+      <View>{item.item.username}</View> */}
     </SafeAreaView>
   );
 };
