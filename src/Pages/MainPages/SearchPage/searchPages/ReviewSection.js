@@ -12,7 +12,6 @@ import { SearchPageTabs } from "../../../../Component/Navigators/TopTabNavigator
 
 const ReviewSection = ({ route, navigation }) => {
   const item = route.params.item;
-  console.log(item.username);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -29,7 +28,7 @@ const ReviewSection = ({ route, navigation }) => {
           </Text>
         </View>
       </View>
-      <SearchPageTabs title={item.title} />
+      <SearchPageTabs item={item} />
     </SafeAreaView>
   );
 };
