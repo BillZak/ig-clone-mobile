@@ -12,7 +12,7 @@ import IconAntDesign from "react-native-vector-icons/AntDesign";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-const Top = ({ route, navigation }) => {
+const Top = ({ route, navigation }) => { 
   const DATA = route.params.item;
   return (
     <SafeAreaView style={styles.container}>
