@@ -159,7 +159,7 @@ const Item = ({ item, onPress }) => (
     <IconMaterialIcons
       style={{
         fontSize: 25,
-        textAlign: "right",
+        textAlign: "right", 
         flex: 1,
         alignSelf: "center",
         color: "grey",
