@@ -10,6 +10,7 @@ import {
 import IconAntDesign from "react-native-vector-icons/AntDesign";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { AntDesign } from "@expo/vector-icons";
 
 const DATA = [
   {
@@ -120,16 +121,24 @@ const HomePage = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.face1}>
         <View style={styles.navbar}>
-          <Text style={{ fontSize: 20, fontWeight: "bold" }}>Theragram</Text>
-        </View>
-        <View style={styles.navbar}>
-          <IconMaterialIcons
-            style={{
-              fontSize: 25,
-              textAlign: "right",
-            }}
-            name="add-box"
-          />
+          <Text style={{ flex: 1, fontSize: 20, fontWeight: "bold" }}>
+            Theragram
+          </Text>
+          <View style={styles.navicons}>
+            <IconMaterialIcons
+              style={{
+                fontSize: 25,
+                paddingRight: 25,
+              }}
+              name="add-box"
+            />
+            <AntDesign
+              onPress={() => navigation.navigate("Messages")}
+              name="message1"
+              size={22}
+              color="black"
+            />
+          </View>
         </View>
       </View>
 
@@ -188,7 +197,12 @@ const styles = StyleSheet.create({
   },
   navbar: {
     flex: 1,
-    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  navicons: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   profileimg: {
     height: 50,
