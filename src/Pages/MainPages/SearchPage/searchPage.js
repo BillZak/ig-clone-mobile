@@ -22,7 +22,8 @@ const DATA = [
     amount: "132k posts",
     username: "@user_name",
     name: "Yourname",
-    message: "NB: Post must contain inspirational message and advice",
+    message:
+      "NB: Post must contain inspirational message and advice about Love",
     img: require("../../../../assets/n.png"),
     time: "6m",
     date: "08:20 AM, 09 SEP 21",
@@ -33,7 +34,8 @@ const DATA = [
     amount: "1.2m posts",
     username: "@user_name",
     name: "Yourname",
-    message: "NB: Post must contain inspirational message and advice",
+    message:
+      "NB: Post must contain inspirational message and advice about work",
     img: require("../../../../assets/n.png"),
     time: "6m",
     date: "15:20 PM, 26 JUL 21",
@@ -159,7 +161,7 @@ const Item = ({ item, onPress }) => (
     <IconMaterialIcons
       style={{
         fontSize: 25,
-        textAlign: "right", 
+        textAlign: "right",
         flex: 1,
         alignSelf: "center",
         color: "grey",
