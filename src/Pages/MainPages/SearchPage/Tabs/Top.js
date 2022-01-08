@@ -1,183 +1,193 @@
 import React from "react";
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Top = ({ route, navigation }) => {
   const item = route.params.item;
+  console.warn(item);
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.item}>
-        <View style={styles.idview}>
-          <Image style={styles.profileimg} source={item.img} />
-          <View style={styles.userid}>
-            <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-            <Text style={{ fontSize: 12, color: "grey" }}>
-              {item.username} . {item.time}
+      <ScrollView>
+        <View style={styles.item}>
+          <View style={styles.idview}>
+            <Image style={styles.profileimg} source={item.img} />
+            <View style={styles.userid}>
+              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text style={{ fontSize: 12, color: "grey" }}>
+                {item.username} . {item.time}
+              </Text>
+            </View>
+            <IconMaterialIcons
+              style={{
+                fontSize: 20,
+                alignSelf: "center",
+                position: "absolute",
+                right: 0,
+              }}
+              name="more-vert"
+            />
+          </View>
+          <View style={styles.postview}>
+            <Text
+              onPress={() => navigation.navigate("ReviewHome", { item: item })}
+              style={{ fontSize: 15 }}
+            >
+              {item.message}
             </Text>
           </View>
-          <IconMaterialIcons
-            style={{
-              fontSize: 20,
-              alignSelf: "center",
-              position: "absolute",
-              right: 0,
-            }}
-            name="more-vert"
-          />
+          <View style={styles.interactview}>
+            <IconAntDesign style={styles.interacticons} name="hearto" />
+            <IconFontAwesome style={styles.interacticons} name="comment-o" />
+            <IconAntDesign style={styles.interacticons} name="retweet" />
+            <IconAntDesign style={styles.interacticons} name="sharealt" />
+          </View>
         </View>
-        <View style={styles.postview}>
-          <Text
-            onPress={() => navigation.navigate("ReviewHome", { item: item })}
-            style={{ fontSize: 15 }}
-          >
-            {item.message}
-          </Text>
-        </View>
-        <View style={styles.interactview}>
-          <IconAntDesign style={styles.interacticons} name="hearto" />
-          <IconFontAwesome style={styles.interacticons} name="comment-o" />
-          <IconAntDesign style={styles.interacticons} name="retweet" />
-          <IconAntDesign style={styles.interacticons} name="sharealt" />
-        </View>
-      </View>
-      <View style={styles.item}>
-        <View style={styles.idview}>
-          <Image style={styles.profileimg} source={item.img} />
-          <View style={styles.userid}>
-            <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-            <Text style={{ fontSize: 12, color: "grey" }}>
-              {item.username} . {item.time}
+        <View style={styles.item}>
+          <View style={styles.idview}>
+            <Image style={styles.profileimg} source={item.img} />
+            <View style={styles.userid}>
+              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text style={{ fontSize: 12, color: "grey" }}>
+                {item.username} . {item.time}
+              </Text>
+            </View>
+            <IconMaterialIcons
+              style={{
+                fontSize: 20,
+                alignSelf: "center",
+                position: "absolute",
+                right: 0,
+              }}
+              name="more-vert"
+            />
+          </View>
+          <View style={styles.postview}>
+            <Text
+              onPress={() => navigation.navigate("ReviewHome", { item: item })}
+              style={{ fontSize: 15 }}
+            >
+              {item.message}
             </Text>
           </View>
-          <IconMaterialIcons
-            style={{
-              fontSize: 20,
-              alignSelf: "center",
-              position: "absolute",
-              right: 0,
-            }}
-            name="more-vert"
-          />
+          <View style={styles.interactview}>
+            <IconAntDesign style={styles.interacticons} name="hearto" />
+            <IconFontAwesome style={styles.interacticons} name="comment-o" />
+            <IconAntDesign style={styles.interacticons} name="retweet" />
+            <IconAntDesign style={styles.interacticons} name="sharealt" />
+          </View>
         </View>
-        <View style={styles.postview}>
-          <Text
-            onPress={() => navigation.navigate("ReviewHome", { item: item })}
-            style={{ fontSize: 15 }}
-          >
-            {item.message}
-          </Text>
-        </View>
-        <View style={styles.interactview}>
-          <IconAntDesign style={styles.interacticons} name="hearto" />
-          <IconFontAwesome style={styles.interacticons} name="comment-o" />
-          <IconAntDesign style={styles.interacticons} name="retweet" />
-          <IconAntDesign style={styles.interacticons} name="sharealt" />
-        </View>
-      </View>
-      <View style={styles.item}>
-        <View style={styles.idview}>
-          <Image style={styles.profileimg} source={item.img} />
-          <View style={styles.userid}>
-            <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-            <Text style={{ fontSize: 12, color: "grey" }}>
-              {item.username} . {item.time}
+        <View style={styles.item}>
+          <View style={styles.idview}>
+            <Image style={styles.profileimg} source={item.img} />
+            <View style={styles.userid}>
+              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text style={{ fontSize: 12, color: "grey" }}>
+                {item.username} . {item.time}
+              </Text>
+            </View>
+            <IconMaterialIcons
+              style={{
+                fontSize: 20,
+                alignSelf: "center",
+                position: "absolute",
+                right: 0,
+              }}
+              name="more-vert"
+            />
+          </View>
+          <View style={styles.postview}>
+            <Text
+              onPress={() => navigation.navigate("ReviewHome", { item: item })}
+              style={{ fontSize: 15 }}
+            >
+              {item.message}
             </Text>
           </View>
-          <IconMaterialIcons
-            style={{
-              fontSize: 20,
-              alignSelf: "center",
-              position: "absolute",
-              right: 0,
-            }}
-            name="more-vert"
-          />
+          <View style={styles.interactview}>
+            <IconAntDesign style={styles.interacticons} name="hearto" />
+            <IconFontAwesome style={styles.interacticons} name="comment-o" />
+            <IconAntDesign style={styles.interacticons} name="retweet" />
+            <IconAntDesign style={styles.interacticons} name="sharealt" />
+          </View>
         </View>
-        <View style={styles.postview}>
-          <Text
-            onPress={() => navigation.navigate("ReviewHome", { item: item })}
-            style={{ fontSize: 15 }}
-          >
-            {item.message}
-          </Text>
-        </View>
-        <View style={styles.interactview}>
-          <IconAntDesign style={styles.interacticons} name="hearto" />
-          <IconFontAwesome style={styles.interacticons} name="comment-o" />
-          <IconAntDesign style={styles.interacticons} name="retweet" />
-          <IconAntDesign style={styles.interacticons} name="sharealt" />
-        </View>
-      </View>
-      <View style={styles.item}>
-        <View style={styles.idview}>
-          <Image style={styles.profileimg} source={item.img} />
-          <View style={styles.userid}>
-            <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-            <Text style={{ fontSize: 12, color: "grey" }}>
-              {item.username} . {item.time}
+        <View style={styles.item}>
+          <View style={styles.idview}>
+            <Image style={styles.profileimg} source={item.img} />
+            <View style={styles.userid}>
+              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text style={{ fontSize: 12, color: "grey" }}>
+                {item.username} . {item.time}
+              </Text>
+            </View>
+            <IconMaterialIcons
+              style={{
+                fontSize: 20,
+                alignSelf: "center",
+                position: "absolute",
+                right: 0,
+              }}
+              name="more-vert"
+            />
+          </View>
+          <View style={styles.postview}>
+            <Text
+              onPress={() => navigation.navigate("ReviewHome", { item: item })}
+              style={{ fontSize: 15 }}
+            >
+              {item.message}
             </Text>
           </View>
-          <IconMaterialIcons
-            style={{
-              fontSize: 20,
-              alignSelf: "center",
-              position: "absolute",
-              right: 0,
-            }}
-            name="more-vert"
-          />
+          <View style={styles.interactview}>
+            <IconAntDesign style={styles.interacticons} name="hearto" />
+            <IconFontAwesome style={styles.interacticons} name="comment-o" />
+            <IconAntDesign style={styles.interacticons} name="retweet" />
+            <IconAntDesign style={styles.interacticons} name="sharealt" />
+          </View>
         </View>
-        <View style={styles.postview}>
-          <Text
-            onPress={() => navigation.navigate("ReviewHome", { item: item })}
-            style={{ fontSize: 15 }}
-          >
-            {item.message}
-          </Text>
-        </View>
-        <View style={styles.interactview}>
-          <IconAntDesign style={styles.interacticons} name="hearto" />
-          <IconFontAwesome style={styles.interacticons} name="comment-o" />
-          <IconAntDesign style={styles.interacticons} name="retweet" />
-          <IconAntDesign style={styles.interacticons} name="sharealt" />
-        </View>
-      </View>
-      <View style={styles.item}>
-        <View style={styles.idview}>
-          <Image style={styles.profileimg} source={item.img} />
-          <View style={styles.userid}>
-            <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-            <Text style={{ fontSize: 12, color: "grey" }}>
-              {item.username} . {item.time}
+        <View style={styles.item}>
+          <View style={styles.idview}>
+            <Image style={styles.profileimg} source={item.img} />
+            <View style={styles.userid}>
+              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text style={{ fontSize: 12, color: "grey" }}>
+                {item.username} . {item.time}
+              </Text>
+            </View>
+            <IconMaterialIcons
+              style={{
+                fontSize: 20,
+                alignSelf: "center",
+                position: "absolute",
+                right: 0,
+              }}
+              name="more-vert"
+            />
+          </View>
+          <View style={styles.postview}>
+            <Text
+              onPress={() => navigation.navigate("ReviewHome", { item: item })}
+              style={{ fontSize: 15 }}
+            >
+              {item.message}
             </Text>
           </View>
-          <IconMaterialIcons
-            style={{
-              fontSize: 20,
-              alignSelf: "center",
-              position: "absolute",
-              right: 0,
-            }}
-            name="more-vert"
-          />
+          <View style={styles.interactview}>
+            <IconAntDesign style={styles.interacticons} name="hearto" />
+            <IconFontAwesome style={styles.interacticons} name="comment-o" />
+            <IconAntDesign style={styles.interacticons} name="retweet" />
+            <IconAntDesign style={styles.interacticons} name="sharealt" />
+          </View>
         </View>
-        <View style={styles.postview}>
-          <Text
-            onPress={() => navigation.navigate("ReviewHome", { item: item })}
-            style={{ fontSize: 15 }}
-          >
-            {item.message}
-          </Text>
-        </View>
-        <View style={styles.interactview}>
-          <IconAntDesign style={styles.interacticons} name="hearto" />
-          <IconFontAwesome style={styles.interacticons} name="comment-o" />
-          <IconAntDesign style={styles.interacticons} name="retweet" />
-          <IconAntDesign style={styles.interacticons} name="sharealt" />
-        </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
