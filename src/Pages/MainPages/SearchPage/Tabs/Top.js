@@ -13,7 +13,6 @@ import IconMaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Top = ({ route, navigation }) => {
   const item = route.params.item;
-  console.warn(item);
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
