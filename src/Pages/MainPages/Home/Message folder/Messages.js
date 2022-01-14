@@ -1,7 +1,20 @@
 //import liraries
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+
+const DATA = [
+  { id: "1", name: "bill zak", time: "12:00", img: require(""), message: "where u dey" },
+  { id: "2",name: "bill zak", time: "12:00", img: require(""), message: "where u dey" },
+  { id: "3",name: "bill zak", time: "12:00", img: require(""), message: "where u dey" },
+  { id: "4",name: "bill zak", time: "12:00", img: require(""), message: "where u dey" },
+];
 
 // create a component
 const Messages = ({ navigation }) => {
@@ -20,7 +33,23 @@ const Messages = ({ navigation }) => {
           </Text>
         </View>
       </View>
-      <View style={styles.messageboard}></View>
+
+      <FlatList
+        style={styles.flatlist}
+        data={DATA}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => {
+          return (
+            <TouchableOpacity
+              key={item.id}
+              onPress={}
+              style={styles.item}
+            >
+              <View style={styles.pinkbox}></View>
+            </TouchableOpacity>
+          );
+        }}
+      />
     </View>
   );
 };
