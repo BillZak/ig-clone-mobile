@@ -157,7 +157,7 @@ const HomePage = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 30,
+    paddingTop: 20,
   },
   face1: {
     flex: 1,
@@ -185,13 +185,11 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
   interactview: {
-    flex: 1,
     flexDirection: "row",
+    justifyContent: "space-around",
     paddingVertical: 5,
   },
   interacticons: {
-    flex: 1,
-    textAlign: "center",
     margin: 5,
     fontSize: 20,
   },
