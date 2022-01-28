@@ -72,7 +72,7 @@ export default function MyAccount() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 30,
+    paddingTop: 20,
     backgroundColor: "#fff",
     // alignItems: "center",
     // justifyContent: "center",
