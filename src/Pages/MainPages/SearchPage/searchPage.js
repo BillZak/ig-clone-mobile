@@ -199,7 +199,7 @@ const SearchPage = ({ navigation }) => {
           }}
         >
           <IconAntDesign
-            style={{ flex: 1, fontSize: 18, top: 5 }}
+            style={{ flex: 1, fontSize: 18, top: 2 }}
             name="search1"
           />
           <TextInput
@@ -230,7 +230,7 @@ const SearchPage = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 30,
+    paddingTop: 20,
   },
   face1: {
     flex: 1,
