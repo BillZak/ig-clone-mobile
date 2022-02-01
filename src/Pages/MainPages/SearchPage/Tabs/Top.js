@@ -20,7 +20,14 @@ const Top = ({ route, navigation }) => {
           <View style={styles.idview}>
             <Image style={styles.profileimg} source={item.img} />
             <View style={styles.userid}>
-              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text
+                onPress={() =>
+                  navigation.navigate("ReviewProfile", { item: item })
+                }
+                style={{ fontWeight: "bold" }}
+              >
+                {item.name}
+              </Text>
               <Text style={{ fontSize: 12, color: "grey" }}>
                 {item.username} . {item.time}
               </Text>
@@ -54,7 +61,14 @@ const Top = ({ route, navigation }) => {
           <View style={styles.idview}>
             <Image style={styles.profileimg} source={item.img} />
             <View style={styles.userid}>
-              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text
+                onPress={() =>
+                  navigation.navigate("ReviewProfile", { item: item })
+                }
+                style={{ fontWeight: "bold" }}
+              >
+                {item.name}
+              </Text>
               <Text style={{ fontSize: 12, color: "grey" }}>
                 {item.username} . {item.time}
               </Text>
@@ -88,7 +102,14 @@ const Top = ({ route, navigation }) => {
           <View style={styles.idview}>
             <Image style={styles.profileimg} source={item.img} />
             <View style={styles.userid}>
-              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text
+                onPress={() =>
+                  navigation.navigate("ReviewProfile", { item: item })
+                }
+                style={{ fontWeight: "bold" }}
+              >
+                {item.name}
+              </Text>
               <Text style={{ fontSize: 12, color: "grey" }}>
                 {item.username} . {item.time}
               </Text>
@@ -122,7 +143,14 @@ const Top = ({ route, navigation }) => {
           <View style={styles.idview}>
             <Image style={styles.profileimg} source={item.img} />
             <View style={styles.userid}>
-              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text
+                onPress={() =>
+                  navigation.navigate("ReviewProfile", { item: item })
+                }
+                style={{ fontWeight: "bold" }}
+              >
+                {item.name}
+              </Text>
               <Text style={{ fontSize: 12, color: "grey" }}>
                 {item.username} . {item.time}
               </Text>
@@ -156,7 +184,14 @@ const Top = ({ route, navigation }) => {
           <View style={styles.idview}>
             <Image style={styles.profileimg} source={item.img} />
             <View style={styles.userid}>
-              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+              <Text
+                onPress={() =>
+                  navigation.navigate("ReviewProfile", { item: item })
+                }
+                style={{ fontWeight: "bold" }}
+              >
+                {item.name}
+              </Text>
               <Text style={{ fontSize: 12, color: "grey" }}>
                 {item.username} . {item.time}
               </Text>
