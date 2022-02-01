@@ -15,68 +15,94 @@ import { AntDesign } from "@expo/vector-icons";
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "@user_name",
+    username: "@user_name",
     name: "Yourname",
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../../../assets/n.png"),
+    about: "About you",
     time: "6m",
     date: "10:20 AM, 10 DEC 21",
+    followers: "100",
+    following: "100",
+    advicers: "40",
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "@user_name",
+    username: "@user_name",
     name: "Yourname",
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../../../assets/hj.jpeg"),
+    about: "About you",
     time: "4h",
     date: "11:40 AM, 14 JAN 21",
+    followers: "150",
+    following: "10",
+    advicers: "20",
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "@user_name",
+    username: "@user_name",
     name: "Yourname",
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../../../assets/n.png"),
+    about: "About you",
     time: "12m",
     date: "07:30 AM, 09 SEPT 21",
+    followers: "800",
+    following: "130",
+    advicers: "30",
   },
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53ab28ba",
-    title: "@user_name",
+    username: "@user_name",
     name: "Yourname",
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../../../assets/n.png"),
+    about: "About you",
     time: "6h",
     date: "12:00 PM, 12 MAR 21",
+    followers: "320",
+    following: "100",
+    advicers: "70",
   },
   {
     id: "3ac68afc-c605-48d3-a4f-fbd91aa97f63",
-    title: "@user_name",
+    username: "@user_name",
     name: "Yourname",
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../../../assets/hj.jpeg"),
+    about: "About you",
     time: "4s",
     date: "09:50 PM, 30 AUG 21",
+    followers: "2000",
+    following: "1200",
+    advicers: "47",
   },
   {
     id: "58694af-3da1-471f-bd96-145571e29d72",
-    title: "@user_name",
+    username: "@user_name",
     name: "Yourname",
     message: "NB: Post must contain inspirational message and advice",
     img: require("../../../../assets/n.png"),
     time: "12h",
     date: "03:29 AM, 24 FEB 21",
+    followers: "3210",
+    following: "170",
+    advicers: "60",
+    about: "About you",
   },
 ];
 
-const Item = ({ item, onPress }) => (
+const Item = ({ item, onPress, GotoProfile }) => (
   <View style={styles.item}>
     <View style={styles.idview}>
       <Image style={styles.profileimg} source={item.img} />
       <View style={styles.userid}>
-        <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
+        <Text onPress={GotoProfile} style={{ fontWeight: "bold" }}>
+          {item.name}
+        </Text>
         <Text style={{ fontSize: 12, color: "grey" }}>
-          {item.title} . {item.time}
+          {item.username} . {item.time}
         </Text>
       </View>
       <IconMaterialIcons
@@ -113,6 +139,7 @@ const HomePage = ({ navigation }) => {
       <Item
         item={item}
         onPress={() => navigation.navigate("ReviewHome", { item: item })}
+        GotoProfile={() => navigation.navigate("ReviewProfile", { item: item })}
       />
     );
   };
