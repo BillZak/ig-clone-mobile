@@ -6,6 +6,7 @@ import Main from "../../Pages/MainPages/Main";
 import ReviewSection from "../../Pages/MainPages/SearchPage/searchPages/ReviewSection";
 import Messages from "../../Pages/MainPages/Home/Message folder/Messages";
 import ReviewProfile from "../../Pages/MainPages/Home/ReviewProfile";
+import EditProfilePage from "../../Pages/MainPages/MyAccount/MinorPages/EditProfilePage";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ function MyStack() {
         <Stack.Screen name="ReviewSection" component={ReviewSection} />
         <Stack.Screen name="ReviewProfile" component={ReviewProfile} />
         <Stack.Screen name="Messages" component={Messages} />
+        <Stack.Screen name="EditProfile" component={EditProfilePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
