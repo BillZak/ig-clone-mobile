@@ -4,29 +4,29 @@ import { StyleSheet, Text, SafeAreaView, View, Image } from "react-native";
 import AccountTabs from "../../../Component/Navigators/HomePageTabs";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 
-export default function MyAccount() {
+export default function MyAccount({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.face1}>
-        <IconFontAwesome
-          style={{
-            fontSize: 25,
-            color: "black",
-            flex: 1,
-            marginLeft: 20,
-          }}
-          name="reorder"
-        />
         <Text
+          onPress={() => navigation.navigate("EditProfile")}
           style={{
             flex: 5,
             fontSize: 20,
-            textAlign: "right",
-            marginRight: 20,
+            textAlign: "left",
+            marginLeft: 20,
           }}
         >
           Edit Profile
         </Text>
+        <IconFontAwesome
+          style={{
+            fontSize: 25,
+            color: "black",
+            marginRight: 20,
+          }}
+          name="reorder"
+        />
       </View>
 
       <View style={styles.face2}>
