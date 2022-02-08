@@ -31,16 +31,14 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   navbar: {
-    flex: 1,
+    height: 60,
     flexDirection: "row",
     alignItems: "center",
     borderBottomWidth: 0.5,
     borderBottomColor: "silver",
     paddingHorizontal: 20,
   },
-  messageboard: {
-    flex: 11,
-  },
+  messageboard: {},
 });
 
 //make this component available to the app
